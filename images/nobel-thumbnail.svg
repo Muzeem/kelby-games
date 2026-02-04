@@ -1,0 +1,48 @@
+<svg width="280" height="180" viewBox="0 0 280 180" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="280" height="180" fill="linear-gradient(180deg, #87CEEB 0%, #90EE90 100%)"/>
+  
+  <!-- Ground -->
+  <rect x="0" y="140" width="280" height="40" fill="#8B4513"/>
+  <rect x="0" y="135" width="280" height="5" fill="#90EE90"/>
+  
+  <!-- Buildings in background -->
+  <rect x="200" y="100" width="20" height="40" fill="#666" opacity="0.4"/>
+  <rect x="230" y="90" width="15" height="50" fill="#777" opacity="0.4"/>
+  <rect x="250" y="110" width="25" height="30" fill="#555" opacity="0.4"/>
+  
+  <!-- Clouds -->
+  <text x="50" y="30" font-size="16" opacity="0.7">☁️</text>
+  <text x="150" y="25" font-size="12" opacity="0.7">☁️</text>
+  <text x="220" y="35" font-size="14" opacity="0.7">☁️</text>
+  
+  <!-- Runner (scientist) -->
+  <text x="60" y="130" font-size="36">👨‍🔬</text>
+  
+  <!-- Obstacles -->
+  <text x="140" y="130" font-size="24">📚</text>
+  <text x="180" y="130" font-size="24">⚗️</text>
+  <text x="220" y="130" font-size="24">💻</text>
+  
+  <!-- Nobel Prize in distance -->
+  <text x="240" y="110" font-size="32" opacity="0.8">🏆</text>
+  
+  <!-- Game title -->
+  <text x="140" y="20" font-family="Arial" font-size="16" font-weight="bold" fill="#1a1a1a" text-anchor="middle">NOBEL RUNNER</text>
+  
+  <!-- Score display -->
+  <text x="20" y="160" font-family="Arial" font-size="12" fill="#333">Score: 1250</text>
+  
+  <!-- Progress bar -->
+  <rect x="20" y="165" width="100" height="6" fill="#e0e0e0" rx="3"/>
+  <rect x="20" y="165" width="35" height="6" fill="#4CAF50" rx="3"/>
+  
+  <!-- Power-ups -->
+  <circle cx="100" cy="100" r="12" fill="rgba(255,255,255,0.9)" stroke="#FFD700" stroke-width="2"/>
+  <text x="100" y="107" font-size="14" text-anchor="middle">🛡️</text>
+  
+  <!-- Motion lines -->
+  <line x1="30" y1="120" x2="45" y2="120" stroke="#fff" stroke-width="2" opacity="0.6"/>
+  <line x1="25" y1="125" x2="40" y2="125" stroke="#fff" stroke-width="2" opacity="0.4"/>
+  <line x1="35" y1="115" x2="50" y2="115" stroke="#fff" stroke-width="2" opacity="0.5"/>
+</svg>

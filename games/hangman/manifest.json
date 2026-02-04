@@ -1,0 +1,20 @@
+{
+  "name": "Hangman",
+  "short_name": "Hangman",
+  "description": "Classic word guessing game. Save the stick figure!",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#FF5722",
+  "theme_color": "#FF5722",
+  "orientation": "portrait-primary",
+  "categories": ["games"],
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

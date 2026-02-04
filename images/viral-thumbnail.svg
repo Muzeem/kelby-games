@@ -1,0 +1,62 @@
+<svg width="280" height="180" viewBox="0 0 280 180" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea"/>
+      <stop offset="100%" style="stop-color:#764ba2"/>
+    </linearGradient>
+    <linearGradient id="button" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b6b"/>
+      <stop offset="50%" style="stop-color:#4ecdc4"/>
+      <stop offset="100%" style="stop-color:#45b7d1"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="280" height="180" fill="url(#bg)"/>
+  
+  <!-- Main click button -->
+  <circle cx="140" cy="90" r="60" fill="url(#button)" opacity="0.9"/>
+  <circle cx="140" cy="90" r="55" fill="none" stroke="white" stroke-width="2" opacity="0.5"/>
+  
+  <!-- Phone emoji in center -->
+  <text x="140" y="105" font-size="48" text-anchor="middle">📱</text>
+  
+  <!-- Click effects around button -->
+  <circle cx="100" cy="60" r="8" fill="white" opacity="0.7"/>
+  <circle cx="180" cy="70" r="6" fill="white" opacity="0.5"/>
+  <circle cx="110" cy="120" r="10" fill="white" opacity="0.6"/>
+  <circle cx="170" cy="110" r="7" fill="white" opacity="0.4"/>
+  
+  <!-- Floating numbers -->
+  <text x="80" y="40" font-family="Arial" font-size="16" font-weight="bold" fill="#4ecdc4">+1K</text>
+  <text x="200" y="50" font-family="Arial" font-size="14" font-weight="bold" fill="#ff6b6b">+500</text>
+  <text x="90" y="140" font-family="Arial" font-size="12" font-weight="bold" fill="#ffd700">+2.5K</text>
+  
+  <!-- Stats display -->
+  <rect x="20" y="20" width="100" height="40" rx="8" fill="rgba(255,255,255,0.9)"/>
+  <text x="25" y="35" font-family="Arial" font-size="10" fill="#333">👀 Views</text>
+  <text x="25" y="50" font-family="Arial" font-size="14" font-weight="bold" fill="#333">1.2M</text>
+  
+  <!-- Upgrades panel preview -->
+  <rect x="200" y="100" width="70" height="70" rx="8" fill="rgba(255,255,255,0.9)"/>
+  <text x="205" y="115" font-family="Arial" font-size="10" fill="#333">🚀 Upgrades</text>
+  
+  <!-- Mini upgrade items -->
+  <rect x="205" y="120" width="60" height="12" rx="4" fill="rgba(78,205,196,0.3)"/>
+  <text x="207" y="129" font-family="Arial" font-size="8" fill="#333">📱 TikToker</text>
+  
+  <rect x="205" y="135" width="60" height="12" rx="4" fill="rgba(255,107,107,0.3)"/>
+  <text x="207" y="144" font-family="Arial" font-size="8" fill="#333">🎥 YouTuber</text>
+  
+  <rect x="205" y="150" width="60" height="12" rx="4" fill="rgba(255,215,0,0.3)"/>
+  <text x="207" y="159" font-family="Arial" font-size="8" fill="#333">⭐ Influencer</text>
+  
+  <!-- Game title -->
+  <text x="140" y="175" font-family="Arial" font-size="16" font-weight="bold" fill="white" text-anchor="middle">VIRAL CLICKER</text>
+  
+  <!-- Viral effects -->
+  <text x="50" y="80" font-size="20" opacity="0.6">🔥</text>
+  <text x="230" y="60" font-size="16" opacity="0.5">⚡</text>
+  <text x="40" y="120" font-size="18" opacity="0.7">💥</text>
+  <text x="220" y="130" font-size="14" opacity="0.4">🌟</text>
+</svg>
