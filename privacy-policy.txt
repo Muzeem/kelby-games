@@ -1,0 +1,71 @@
+PRIVACY POLICY
+Last Updated: February 3, 2025
+
+Welcome to Dreamers Puzzle. We respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your data when you use our game.
+
+INFORMATION WE COLLECT
+
+Dreamers Puzzle is designed with privacy in mind. We collect minimal information:
+
+• Local Storage Data: Game progress, settings, and preferences are stored locally on your device using browser storage. This data never leaves your device.
+
+• No Personal Information: We do not collect, store, or transmit any personally identifiable information such as names, email addresses, or contact details.
+
+• No Account Required: You can play the game without creating an account or providing any personal information.
+
+HOW WE USE YOUR INFORMATION
+
+The limited data stored locally on your device is used solely to:
+
+• Save your game progress and puzzle completion status
+• Remember your preferences and settings
+• Provide a seamless gaming experience across sessions
+
+DATA STORAGE AND SECURITY
+
+• Local Storage: All game data is stored in your browser's local storage and remains on your device.
+
+• No Server Transmission: We do not transmit your game data to any external servers.
+
+• Service Worker: Our Progressive Web App uses a service worker to enable offline functionality. This caches game assets locally for faster loading and offline play.
+
+THIRD-PARTY SERVICES
+
+Dreamers Puzzle does not integrate with any third-party analytics, advertising, or tracking services. We do not share your data with third parties because we don't collect it in the first place.
+
+COOKIES
+
+This game does not use cookies. All data is stored using browser local storage APIs, which you can clear at any time through your browser settings.
+
+CHILDREN'S PRIVACY
+
+Dreamers Puzzle is suitable for all ages. Since we do not collect any personal information, there are no special considerations for children's data under COPPA or similar regulations.
+
+YOUR RIGHTS AND CHOICES
+
+You have complete control over your data:
+
+• Delete Data: You can clear all game data by clearing your browser's local storage or cache.
+
+• Opt-Out: Since we don't collect personal data, there's nothing to opt out of.
+
+• Data Portability: Your game data exists only on your device and can be deleted at any time.
+
+CHANGES TO THIS PRIVACY POLICY
+
+We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated "Last Updated" date. We encourage you to review this policy periodically.
+
+CONTACT US
+
+If you have any questions or concerns about this Privacy Policy, please contact us at:
+
+Email: privacy@kelby.in
+
+COMPLIANCE
+
+This Privacy Policy is designed to comply with:
+
+• General Data Protection Regulation (GDPR)
+• California Consumer Privacy Act (CCPA)
+• Children's Online Privacy Protection Act (COPPA)
+• Other applicable privacy laws and regulations
