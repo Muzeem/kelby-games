@@ -271,8 +271,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
   var myTimer = setInterval(addColours, 50);
 });
-
-
-document.getElementById('backBtn').addEventListener('click', function() {
-    window.location.href = '/';
-});
