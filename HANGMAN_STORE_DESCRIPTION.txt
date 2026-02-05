@@ -1,0 +1,59 @@
+===== SHORT DESCRIPTION =====
+
+Classic word guessing game. Guess letters to reveal the word before running out of chances. 5 categories, offline play, no ads.
+
+
+===== FULL DESCRIPTION =====
+
+Hangman - Classic Word Guessing Game
+
+The timeless word puzzle you know and love. Guess letters to reveal hidden words before the stick figure is complete.
+
+Features:
+
+• 5 Word Categories
+  - Programming terms
+  - Animals
+  - Countries
+  - Movies
+  - Food
+
+• Hint System
+  Get a clue about the word or reveal a random letter when you're stuck.
+
+• Score Tracking
+  Earn points for correct guesses and build winning streaks.
+
+• Offline Play
+  Works perfectly without internet connection.
+
+• No Ads
+  Pure gameplay with no interruptions.
+
+• Keyboard & Touch Support
+  Play with mouse, keyboard, or touchscreen.
+
+How to Play:
+
+1. Choose a category
+2. Guess letters by clicking or typing
+3. Correct letters appear in the word
+4. Wrong guesses add to the stick figure
+5. Win by guessing the word before 6 wrong guesses
+
+Perfect for vocabulary building, quick breaks, and family fun.
+
+Privacy: No data collection, no tracking. All game data stays on your device.
+
+Support: support@kelby.in
+Privacy Policy: https://kelby.in/privacy-policy.html
+
+
+===== KEYWORDS =====
+
+hangman, word game, word puzzle, vocabulary, spelling, educational, brain training, offline, free, no ads
+
+
+===== PROMOTIONAL TEXT =====
+
+Classic Hangman - guess the word before time runs out! 5 categories, hint system, offline play. No ads, completely free.
