@@ -1,0 +1,23 @@
+{
+  "name": "Dreamers Puzzle",
+  "short_name": "Dreamers",
+  "description": "A contemplative jigsaw puzzle game exploring pivotal moments that changed human history.",
+  "start_url": "/games/dreamers-puzzle/",
+  "scope": "/games/dreamers-puzzle/",
+  "display": "standalone",
+  "background_color": "#1a1a2e",
+  "theme_color": "#c9a227",
+  "categories": ["games"],
+  "icons": [
+    {
+      "src": "/games/dreamers-puzzle/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/games/dreamers-puzzle/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

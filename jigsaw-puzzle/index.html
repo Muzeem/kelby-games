@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="Fun 30-piece jigsaw puzzle game with multiple images. Play directly in your browser!">
+    <meta name="keywords" content="jigsaw puzzle, puzzle game, brain game, free puzzle">
+    <meta name="theme-color" content="#4CAF50">
+    <title>Picture Puzzle Master - 30 Piece Challenge | Kelby Games</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="/icon-192.png">
+</head>
+<body>
+    <div class="container">
+        <header class="header" role="banner">
+            <h1>🧩 Picture Puzzle Master</h1>
+            <div class="controls" role="toolbar" aria-label="Game controls">
+                <select id="puzzleSelect" aria-label="Select puzzle image">
+                    <option value="0">Puzzle 1</option>
+                    <option value="1">Puzzle 2</option>
+                    <option value="2">Puzzle 3</option>
+                    <option value="3">Puzzle 4</option>
+                    <option value="4">Puzzle 5</option>
+                </select>
+                <button id="newGame" aria-label="Start new game">New Game</button>
+                <button id="showHint" aria-label="Toggle hint visibility">Hint</button>
+                <div class="stats" role="status" aria-live="polite">
+                    <span aria-label="Pieces placed"><span id="piecesPlaced">0</span>/30</span>
+                    <span aria-label="Time elapsed"><span id="timer">00:00</span></span>
+                </div>
+            </div>
+        </header>
+        
+        <main class="game-area" role="main">
+            <div class="canvas-container">
+                <canvas id="puzzleCanvas" role="img" aria-label="Puzzle board"></canvas>
+            </div>
+            
+            <aside class="pieces-panel" role="complementary" aria-label="Puzzle pieces">
+                <h3>Pieces</h3>
+                <div id="piecesContainer" role="list"></div>
+            </aside>
+        </main>
+    </div>
+    
+    <div id="winModal" class="modal" role="dialog" aria-labelledby="winTitle" aria-modal="true">
+        <div class="modal-content">
+            <h2 id="winTitle">Puzzle Complete!</h2>
+            <p>Time: <span id="finalTime"></span></p>
+            <button id="playAgain" autofocus>Play Again</button>
+        </div>
+    </div>
+    
+    <footer role="contentinfo">
+        <a href="/">← Back to Games</a> | 
+        <a href="/privacy-policy.html">Privacy Policy</a>
+    </footer>
+    
+    <script src="jigsaw-script-optimized.js"></script>
+</body>
+</html>
