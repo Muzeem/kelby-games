@@ -1,0 +1,45 @@
+name: Validate HTML & Links
+
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  validate-html:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Validate HTML files
+        uses: Cyb3r-Jak3/html5validator-action@v7.2.0
+        with:
+          root: .
+          css: false
+          
+  check-links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install link checker
+        run: npm install -g broken-link-checker
+      
+      - name: Start server
+        run: |
+          npx http-server . -p 8080 &
+          sleep 5
+      
+      - name: Check links
+        run: |
+          blc http://localhost:8080 -ro --exclude "mailto:" --exclude "tel:"
+        continue-on-error: true
