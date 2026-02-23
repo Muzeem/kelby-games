@@ -27,22 +27,36 @@ body {
 h1 {
     font-size: 4.5rem;
     line-height: 1;
-    margin: 2rem 0 0 0;
+    margin: 2rem 0 1rem 0;
     color: #ff7660;
 }
 
-h2 {
-    font-size: 3rem;
-    color: #3b1010;
-    margin: 2rem;
+.game-info {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin: 1rem 0 2rem 0;
+    flex-wrap: wrap;
 }
 
-.score {
+.info-item {
     background: #ffe5cf;
-    padding: 0 3rem;
-    line-height: 1;
+    padding: 1rem 2rem;
     border-radius: 1rem;
+    font-size: 2rem;
     color: #3b1010;
+    font-weight: bold;
+}
+
+.info-item .label {
+    color: #666;
+    font-weight: normal;
+    margin-right: 0.5rem;
+}
+
+.stage, .score, .target, .timer {
+    color: #ff7660;
+    font-weight: bold;
 }
 
 .game {
@@ -51,6 +65,8 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
+    cursor: none;
+    position: relative;
 }
 
 .hole {
@@ -79,7 +95,7 @@ h2 {
     width: 100%;
     height: 100%;
     transition: all 0.4s;
-    cursor: pointer;
+    cursor: none;
 }
 
 .hole.up .mole {
@@ -122,6 +138,97 @@ button:active {
     padding: 1rem 2rem;
 }
 
+.hammer {
+    position: fixed;
+    width: 150px;
+    height: 150px;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    transition: transform 0.1s ease;
+    filter: drop-shadow(3px 3px 6px rgba(0,0,0,0.4));
+}
+
+.hammer.hidden {
+    display: none;
+}
+
+.hammer.hitting {
+    transform: translate(-50%, -50%) rotate(-10deg) scale(0.85);
+    transition: transform 0.05s ease;
+}
+
+.hammer svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Mole hit effects */
+.mole.hit {
+    animation: moleHit 0.3s ease;
+}
+
+@keyframes moleHit {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.8) rotate(-10deg);
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+.hit-effect {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 10;
+}
+
+.hit-stars {
+    position: absolute;
+    font-size: 3rem;
+    animation: starBurst 0.6s ease-out forwards;
+    color: #FFD700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+@keyframes starBurst {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -150%) scale(1.5);
+    }
+}
+
+.score-popup {
+    position: absolute;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ff7660;
+    animation: scoreFloat 0.8s ease-out forwards;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    z-index: 11;
+}
+
+@keyframes scoreFloat {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -200%) scale(1.2);
+    }
+}
+
 @media (max-width: 700px) {
     .game {
         width: 90vw;
@@ -139,4 +246,108 @@ button:active {
     button {
         font-size: 1.6rem;
     }
+    
+    .hammer {
+        width: 110px;
+        height: 110px;
+    }
+    
+    .game-info {
+        gap: 1rem;
+    }
+    
+    .info-item {
+        font-size: 1.6rem;
+        padding: 0.8rem 1.5rem;
+    }
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #fff9e2;
+    padding: 3rem;
+    border-radius: 2rem;
+    text-align: center;
+    max-width: 500px;
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-content h2 {
+    font-size: 3rem;
+    color: #ff7660;
+    margin: 0 0 1rem 0;
+}
+
+.modal-content p {
+    font-size: 1.8rem;
+    color: #3b1010;
+    margin: 1rem 0 2rem 0;
+}
+
+.modal-content button {
+    margin: 0.5rem;
+}
+
+/* Stage transition */
+.stage-transition {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 118, 96, 0.95);
+    color: white;
+    padding: 3rem 5rem;
+    border-radius: 2rem;
+    z-index: 9998;
+    text-align: center;
+    animation: stageTransition 2s ease;
+}
+
+@keyframes stageTransition {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+    }
+}
+
+.stage-transition h2 {
+    font-size: 4rem;
+    margin: 0 0 1rem 0;
+}
+
+.stage-transition p {
+    font-size: 2rem;
+    margin: 0;
 }
