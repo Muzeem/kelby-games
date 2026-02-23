@@ -2,110 +2,161 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5.0">
-    <meta name="description" content="Play 12 free online games on Kelby Games! Picture puzzles, word games, brain trainers, arcade classics, and more. No download required. Play instantly in your browser!">
-    <meta name="keywords" content="free online games, browser games, puzzle games, word games, arcade games, 2048, flappy bird, typing game, no download games, instant play games, kelby games">
-    <meta name="theme-color" content="#4CAF50">
-    <meta property="og:title" content="Kelby Games - Free Online Games">
-    <meta property="og:description" content="Play amazing free games instantly! Puzzles, word games, brain trainers, and more. No download needed!">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kelby Games — Handcrafted browser games with soul. Built by an indie developer who believes games should mean something.">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta property="og:title" content="Kelby Games">
+    <meta property="og:description" content="Handcrafted browser games with soul.">
     <meta property="og:type" content="website">
-    <title>Kelby Games - 12 Free Online Games | No Download Required</title>
+    <title>Kelby Games</title>
     <link rel="stylesheet" href="portal-style.css">
     <link rel="manifest" href="manifest.json">
     <link rel="icon" type="image/png" href="icon-192.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <header role="banner">
-            <h1>🎮 Kelby Games</h1>
-            <p>Premium Free Games - No Ads, No Tracking, Pure Fun</p>
-        </header>
-        
-        <main role="main">
-            <nav class="games-list" role="navigation" aria-label="Game selection">
-                
-                <a href="games/dreamers-puzzle/" class="game-link game-link-featured" aria-label="Play Dreamers Puzzle">
-                    <img src="games/dreamers-puzzle/icons/icon-512.png" alt="Dreamers Puzzle icon" loading="lazy">
-                    <span>Dreamers Puzzle ⭐</span>
-                    <small>History in pieces</small>
+
+    <nav class="top-nav">
+        <span class="logo">Kelby</span>
+        <div class="nav-links">
+            <a href="#games">Games</a>
+            <a href="#about">About</a>
+            <a href="privacy-policy.html">Privacy</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <p class="hero-label">Indie Game Studio</p>
+        <h1>Games with soul.</h1>
+        <p class="hero-sub">Handcrafted browser games that tell stories, challenge minds, and respect your time. No ads. No tracking. Just play.</p>
+        <a href="#games" class="hero-cta">Explore Games</a>
+    </header>
+
+    <main>
+        <section id="games" class="games-section">
+            <div class="section-header">
+                <h2>The Collection</h2>
+                <p>5 games. Each one built with intention.</p>
+            </div>
+
+            <div class="games-grid">
+
+                <a href="games/dreamers-puzzle/" class="game-card featured">
+                    <div class="game-badge">Featured</div>
+                    <div class="game-image">
+                        <img src="games/dreamers-puzzle/icons/icon-512.png" alt="Dreamers Puzzle" loading="lazy">
+                    </div>
+                    <div class="game-info">
+                        <h3>Dreamers Puzzle</h3>
+                        <p class="game-genre">Narrative Puzzle</p>
+                        <p class="game-desc">Piece together pivotal moments that changed human history. Each puzzle reveals the story of a dreamer who refused to accept the impossible.</p>
+                        <div class="game-tags">
+                            <span>Story-driven</span>
+                            <span>3 Difficulties</span>
+                            <span>Offline</span>
+                        </div>
+                    </div>
                 </a>
-                
-                <a href="games/jigsaw-puzzle/" class="game-link" aria-label="Play Picture Puzzle Master">
-                    <img src="images/jigsaw-thumbnail.svg" alt="Picture Puzzle Master icon" loading="lazy">
-                    <span>Picture Puzzle Master</span>
-                    <small>30-piece challenges</small>
+
+                <a href="games/29-Whack-A-Mole-Game/" class="game-card">
+                    <div class="game-image">
+                        <img src="games/29-Whack-A-Mole-Game/icons/ChatGPT Image Feb 5, 2026, 11_03_34 PM.png" alt="Whack-a-Mole" loading="lazy">
+                    </div>
+                    <div class="game-info">
+                        <h3>Whack-a-Mole</h3>
+                        <p class="game-genre">Arcade</p>
+                        <p class="game-desc">10 progressive stages. Faster moles. Bigger stakes. Classic arcade reimagined with a stage-based progression system.</p>
+                        <div class="game-tags">
+                            <span>10 Stages</span>
+                            <span>Arcade</span>
+                        </div>
+                    </div>
                 </a>
-                
-                <a href="games/hangman/" class="game-link" aria-label="Play Word Guess Pro">
-                    <img src="games/hangman/icons/icon-512.png" alt="Word Guess Pro icon" loading="lazy">
-                    <span>Word Guess Pro</span>
-                    <small>Save the stick figure</small>
+
+                <a href="games/hangman/" class="game-card">
+                    <div class="game-image">
+                        <img src="games/hangman/icons/icon-512.png" alt="Word Guess Pro" loading="lazy">
+                    </div>
+                    <div class="game-info">
+                        <h3>Word Guess Pro</h3>
+                        <p class="game-genre">Word Game</p>
+                        <p class="game-desc">Classic hangman with a modern twist. Streaks, scoring, and hints. How many words can you save?</p>
+                        <div class="game-tags">
+                            <span>Word Game</span>
+                            <span>Streaks</span>
+                        </div>
+                    </div>
                 </a>
-                
-                <a href="games/memory-match/" class="game-link" aria-label="Play Brain Trainer">
-                    <img src="images/memory-thumbnail.svg" alt="Brain Trainer icon" loading="lazy">
-                    <span>Brain Trainer</span>
-                    <small>Memory card match</small>
+
+                <a href="games/21-2048-Game/" class="game-card">
+                    <div class="game-image">
+                        <img src="games/21-2048-Game/icons/icon-512.png" alt="2048" loading="lazy">
+                    </div>
+                    <div class="game-info">
+                        <h3>2048</h3>
+                        <p class="game-genre">Puzzle</p>
+                        <p class="game-desc">Slide, merge, and strategize your way to 2048. Simple to learn, impossible to put down.</p>
+                        <div class="game-tags">
+                            <span>Strategy</span>
+                            <span>Classic</span>
+                        </div>
+                    </div>
                 </a>
-                
-                <a href="games/tic-tac-toe/" class="game-link" aria-label="Play Tic Tac Toe Showdown">
-                    <img src="images/tic-tac-toe-thumbnail.svg" alt="Tic Tac Toe Showdown icon" loading="lazy">
-                    <span>Tic Tac Toe Showdown</span>
-                    <small>Beat the AI</small>
+
+                <a href="games/life-simulator/" class="game-card">
+                    <div class="game-image">
+                        <img src="images/life-thumbnail.svg" alt="Life Choices" loading="lazy">
+                    </div>
+                    <div class="game-info">
+                        <h3>Life Choices</h3>
+                        <p class="game-genre">Narrative Simulation</p>
+                        <p class="game-desc">Every decision shapes your destiny. Navigate career, relationships, and finances in this text-based life simulator.</p>
+                        <div class="game-tags">
+                            <span>Story</span>
+                            <span>Simulation</span>
+                        </div>
+                    </div>
                 </a>
-                
-                <a href="games/life-simulator/" class="game-link" aria-label="Play Life Choices">
-                    <img src="images/life-thumbnail.svg" alt="Life Choices icon" loading="lazy">
-                    <span>Life Choices</span>
-                    <small>Your story, your decisions</small>
-                </a>
-                
-                <a href="games/21-2048-Game/" class="game-link" aria-label="Play 2048">
-                    <img src="games/21-2048-Game/icons/icon-512.png" alt="2048 icon" loading="lazy">
-                    <span>2048</span>
-                    <small>Merge to 2048</small>
-                </a>
-                
-                <a href="games/17-Typing-Game/" class="game-link" aria-label="Play Speed Typer">
-                    <img src="games/17-Typing-Game/icons/icon-512.png" alt="Speed Typer icon" loading="lazy">
-                    <span>Speed Typer</span>
-                    <small>Test your typing speed</small>
-                </a>
-                
-                <a href="games/19-Flappy-Bird-Game/" class="game-link" aria-label="Play Flappy Bird">
-                    <img src="games/19-Flappy-Bird-Game/icons/icon-512.png" alt="Flappy Bird icon" loading="lazy">
-                    <span>Flappy Bird</span>
-                    <small>Tap to fly</small>
-                </a>
-                
-                <a href="games/20-Crossy-Road-Game/" class="game-link" aria-label="Play Crossy Road">
-                    <img src="games/20-Crossy-Road-Game/icons/icon-512.png" alt="Crossy Road icon" loading="lazy">
-                    <span>Crossy Road</span>
-                    <small>Navigate the traffic</small>
-                </a>
-                
-                <a href="games/29-Whack-A-Mole-Game/" class="game-link" aria-label="Play Whack-a-Mole">
-                    <img src="games/29-Whack-A-Mole-Game/icons/ChatGPT Image Feb 5, 2026, 11_03_34 PM.png" alt="Whack-a-Mole icon" loading="lazy">
-                    <span>Whack-a-Mole</span>
-                    <small>Classic arcade fun</small>
-                </a>
-                
-                <a href="games/06-Tower-Blocks/" class="game-link" aria-label="Play Tower Blocks">
-                    <img src="games/06-Tower-Blocks/icons/icon-512.png" alt="Tower Blocks icon" loading="lazy">
-                    <span>Tower Blocks</span>
-                    <small>Stack them high</small>
-                </a>
-            </nav>
-        </main>
-        
-        <footer role="contentinfo">
-            <p>&copy; 2025 Kelby Games. All Rights Reserved.</p>
-            <p>
-                <a href="privacy-policy.html">Privacy Policy</a> | 
-                <a href="mailto:support@kelby.in">Contact Support</a>
-            </p>
-        </footer>
-    </div>
+
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="about-content">
+                <h2>Built by one developer.</h2>
+                <p>I'm an independent game developer who believes browser games deserve better. Every game in this collection is handcrafted with vanilla JavaScript — no frameworks, no bloat, no compromise.</p>
+                <p>5 games live on the Microsoft Store. 3 more in development. Each one tells a story or challenges your mind in a way that respects your intelligence.</p>
+                <div class="about-stats">
+                    <div class="stat">
+                        <span class="stat-number">5</span>
+                        <span class="stat-label">Published Games</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">0</span>
+                        <span class="stat-label">Ads Shown</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">0</span>
+                        <span class="stat-label">Data Collected</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <span class="logo">Kelby</span>
+            <div class="footer-links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="mailto:support@kelby.in">Contact</a>
+            </div>
+            <p class="copyright">&copy; 2025 Kelby Games. All rights reserved.</p>
+        </div>
+    </footer>
+
     <script src="portal-script.js"></script>
 </body>
 </html>

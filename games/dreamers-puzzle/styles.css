@@ -4,19 +4,29 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
 body {
     font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
     background: #1a1a2e;
     color: #e8e8e8;
     overflow: hidden;
     height: 100vh;
+    width: 100vw;
+    position: fixed;
     -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
 }
 
 #app {
     width: 100%;
     height: 100vh;
     position: relative;
+    overflow: hidden;
 }
 
 .screen {
@@ -120,6 +130,7 @@ body {
     gap: 25px;
     max-width: 1100px;
     width: 100%;
+    padding: 0 10px;
 }
 
 .puzzle-card {
@@ -129,6 +140,7 @@ body {
     padding: 15px;
     cursor: pointer;
     transition: all 0.3s ease;
+    min-width: 0;
 }
 
 .puzzle-card:hover {
@@ -155,6 +167,7 @@ body {
     font-weight: 400;
     line-height: 1.5;
     text-align: center;
+    word-wrap: break-word;
 }
 
 /* Difficulty Screen */
@@ -255,6 +268,8 @@ body {
     align-items: center;
     padding: 20px;
     background: #0a0a12;
+    min-height: 0;
+    overflow: hidden;
 }
 
 .puzzle-board {
@@ -263,6 +278,8 @@ body {
     border: 2px solid rgba(201, 162, 39, 0.3);
     border-radius: 4px;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.5), inset 0 0 30px rgba(0, 0, 0, 0.3);
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .puzzle-board-inner {
@@ -466,9 +483,16 @@ body {
         flex-direction: column;
     }
     
+    .puzzle-area {
+        flex: 1;
+        min-height: 0;
+    }
+    
     .pieces-tray {
         width: 100%;
         height: 180px;
+        min-height: 150px;
+        max-height: 200px;
         border-left: none;
         border-top: 1px solid rgba(201, 162, 39, 0.15);
     }
@@ -478,16 +502,23 @@ body {
         overflow-x: auto;
         overflow-y: hidden;
         flex-wrap: nowrap;
+        justify-content: flex-start;
     }
     
     .tray-piece {
         flex-shrink: 0;
+    }
+    
+    .puzzle-board {
+        max-width: 100%;
+        max-height: 100%;
     }
 }
 
 @media (max-width: 600px) {
     .screen-title {
         font-size: 1.4rem;
+        margin-bottom: 25px;
     }
     
     .intro-text {
@@ -497,14 +528,39 @@ body {
     .puzzle-header {
         flex-direction: column;
         gap: 10px;
+        padding: 12px 15px;
+    }
+    
+    .puzzle-hint {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+    
+    .puzzle-controls {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .control-btn {
+        font-size: 0.75rem;
+        padding: 7px 14px;
     }
 }
 
 
 /* Mobile Touch Support */
 @media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+    
+    #selection-screen {
+        padding: 30px 15px;
+    }
+    
     .intro-content {
         padding: 25px;
+        max-width: 100%;
     }
     
     .intro-text {
@@ -518,12 +574,17 @@ body {
     }
     
     .puzzle-grid {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
         gap: 15px;
+        padding: 0 5px;
     }
     
     .puzzle-preview {
         height: 120px;
+    }
+    
+    .puzzle-card {
+        padding: 12px;
     }
     
     .puzzle-card h3 {
@@ -532,11 +593,15 @@ body {
     
     .difficulty-options {
         gap: 15px;
+        padding: 0 20px;
+        width: 100%;
     }
     
     .difficulty-btn {
         padding: 20px 35px;
         font-size: 1rem;
+        width: 100%;
+        max-width: 300px;
     }
     
     .puzzle-header {
@@ -544,13 +609,13 @@ body {
     }
     
     .puzzle-hint {
-        font-size: 0.95rem;
+        font-size: 0.85rem;
         text-align: center;
     }
     
     .control-btn {
         padding: 6px 12px;
-        font-size: 0.75rem;
+        font-size: 0.7rem;
     }
     
     .puzzle-area {
@@ -558,7 +623,7 @@ body {
     }
     
     .pieces-tray {
-        height: 150px;
+        height: 140px;
     }
     
     .tray-header {
@@ -592,41 +657,63 @@ body {
         font-size: 0.9rem;
         line-height: 1.7;
     }
+    
+    #completion-screen {
+        padding: 30px 15px;
+    }
 }
 
 @media (max-width: 480px) {
     .screen-title {
         font-size: 1.2rem;
         letter-spacing: 1px;
+        margin-bottom: 20px;
     }
     
     .intro-text {
         font-size: 1rem;
+        line-height: 1.7;
     }
     
     .puzzle-grid {
         grid-template-columns: 1fr;
-        padding: 0 10px;
+        padding: 0 5px;
     }
     
     .difficulty-options {
         flex-direction: column;
         width: 100%;
-        padding: 0 30px;
+        padding: 0 20px;
     }
     
     .difficulty-btn {
         width: 100%;
+        max-width: 100%;
+        padding: 18px 30px;
     }
     
     .puzzle-controls {
         width: 100%;
         justify-content: center;
+        gap: 6px;
+    }
+    
+    .control-btn {
+        padding: 6px 10px;
+        font-size: 0.65rem;
     }
     
     .tray-piece {
         width: 50px;
         height: 50px;
+    }
+    
+    .pieces-tray {
+        height: 130px;
+    }
+    
+    .puzzle-hint {
+        font-size: 0.8rem;
     }
 }
 

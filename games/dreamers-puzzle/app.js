@@ -5,9 +5,20 @@ const CONFIG = {
     TAB_SIZE: 0.2,
     MAX_BOARD_HEIGHT: 500,
     MAX_BOARD_WIDTH: 700,
-    DROP_TOLERANCE: 0.4,
-    DROP_TOLERANCE_MOBILE: 0.5
+    DROP_TOLERANCE: 0.5,
+    DROP_TOLERANCE_MOBILE: 0.6,
+    MOBILE_BREAKPOINT: 768,
+    TABLET_BREAKPOINT: 900
 };
+
+// Responsive helper
+function isMobile() {
+    return window.innerWidth <= CONFIG.MOBILE_BREAKPOINT;
+}
+
+function isTablet() {
+    return window.innerWidth <= CONFIG.TABLET_BREAKPOINT;
+}
 
 // Game State
 let currentPuzzle = null;
@@ -37,7 +48,77 @@ document.addEventListener('DOMContentLoaded', () => {
     renderPuzzleGrid();
     setupEventListeners();
     setupKeyboardNavigation();
+    setupResizeHandler();
+    setupVisibilityHandler();
 });
+
+// Handle tab visibility changes - mute audio when tab is hidden
+function setupVisibilityHandler() {
+    document.addEventListener('visibilitychange', () => {
+        const backgroundMusic = document.getElementById('background-music');
+        const celebrationSound = document.getElementById('celebration-sound');
+        
+        if (document.hidden) {
+            // Tab is hidden - mute audio
+            if (backgroundMusic) {
+                backgroundMusic.muted = true;
+            }
+            if (celebrationSound) {
+                celebrationSound.muted = true;
+            }
+        } else {
+            // Tab is visible - unmute audio
+            if (backgroundMusic) {
+                backgroundMusic.muted = false;
+            }
+            if (celebrationSound) {
+                celebrationSound.muted = false;
+            }
+        }
+    });
+}
+
+// Handle window resize
+let resizeTimeout;
+function setupResizeHandler() {
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            // Only resize if puzzle is active
+            if (screens.puzzle.classList.contains('active') && loadedImage) {
+                const oldBoardWidth = boardWidth;
+                const oldBoardHeight = boardHeight;
+                const oldPieceWidth = pieceWidth;
+                const oldPieceHeight = pieceHeight;
+                
+                setupBoard(loadedImage);
+                
+                // Recalculate piece positions if board size changed
+                if (oldBoardWidth !== boardWidth || oldBoardHeight !== boardHeight) {
+                    const scaleX = pieceWidth / oldPieceWidth;
+                    const scaleY = pieceHeight / oldPieceHeight;
+                    
+                    pieces.forEach(piece => {
+                        // Update correct positions based on new piece dimensions
+                        piece.correctX = piece.col * pieceWidth;
+                        piece.correctY = piece.row * pieceHeight;
+                        
+                        if (piece.placed && piece.element) {
+                            piece.element.style.left = piece.correctX + 'px';
+                            piece.element.style.top = piece.correctY + 'px';
+                            
+                            // Recreate the piece canvas with new dimensions
+                            const newCanvas = createPieceCanvas(piece);
+                            piece.element.src = newCanvas.toDataURL();
+                        }
+                    });
+                    drawBackgroundImage();
+                    drawBoardGridWithPieces();
+                }
+            }
+        }, 250);
+    });
+}
 
 // Intro Screen
 let introStep = 0;
@@ -187,16 +268,27 @@ function setupBoard(img) {
     const area = document.querySelector('.puzzle-area');
     
     const areaRect = area.getBoundingClientRect();
-    const maxWidth = areaRect.width - 60;
-    const maxHeight = areaRect.height - 60;
+    
+    // Responsive padding based on screen size
+    const padding = isMobile() ? 20 : 60;
+    const maxWidth = areaRect.width - padding;
+    const maxHeight = areaRect.height - padding;
     
     const imgRatio = img.width / img.height;
     
+    // Responsive max dimensions
+    const maxBoardWidth = isMobile() ? Math.min(maxWidth, 400) : 
+                          isTablet() ? Math.min(maxWidth, 550) : 
+                          CONFIG.MAX_BOARD_WIDTH;
+    const maxBoardHeight = isMobile() ? Math.min(maxHeight, 300) : 
+                           isTablet() ? Math.min(maxHeight, 400) : 
+                           CONFIG.MAX_BOARD_HEIGHT;
+    
     if (maxWidth / maxHeight > imgRatio) {
-        boardHeight = Math.min(maxHeight, CONFIG.MAX_BOARD_HEIGHT);
+        boardHeight = Math.min(maxHeight, maxBoardHeight);
         boardWidth = boardHeight * imgRatio;
     } else {
-        boardWidth = Math.min(maxWidth, CONFIG.MAX_BOARD_WIDTH);
+        boardWidth = Math.min(maxWidth, maxBoardWidth);
         boardHeight = boardWidth / imgRatio;
     }
     
@@ -524,10 +616,15 @@ function handleDrop(e) {
     
     const board = document.getElementById('puzzle-board');
     const rect = board.getBoundingClientRect();
+    
+    // Calculate drop position relative to board
     const dropX = e.clientX - rect.left;
     const dropY = e.clientY - rect.top;
     
-    const tolerance = Math.min(pieceWidth, pieceHeight) * CONFIG.DROP_TOLERANCE;
+    // Use more lenient tolerance for better UX
+    const tolerance = Math.min(pieceWidth, pieceHeight) * (isMobile() ? CONFIG.DROP_TOLERANCE_MOBILE : CONFIG.DROP_TOLERANCE);
+    
+    // Check if dropped near the correct position (center of piece)
     const centerX = piece.correctX + pieceWidth / 2;
     const centerY = piece.correctY + pieceHeight / 2;
     
@@ -574,6 +671,7 @@ function handleTouchEnd(e) {
     if (clone) clone.remove();
     
     if (draggedElement) draggedElement.classList.remove('dragging');
+    
     if (!draggedPieceId) return;
     
     const piece = pieces.find(p => p.id === draggedPieceId);
@@ -586,10 +684,15 @@ function handleTouchEnd(e) {
     const touch = e.changedTouches[0];
     const board = document.getElementById('puzzle-board');
     const rect = board.getBoundingClientRect();
+    
+    // Calculate drop position relative to board
     const dropX = touch.clientX - rect.left;
     const dropY = touch.clientY - rect.top;
     
+    // More lenient tolerance for mobile
     const tolerance = Math.min(pieceWidth, pieceHeight) * CONFIG.DROP_TOLERANCE_MOBILE;
+    
+    // Check if dropped near the correct position (center of piece)
     const centerX = piece.correctX + pieceWidth / 2;
     const centerY = piece.correctY + pieceHeight / 2;
     

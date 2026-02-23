@@ -11,8 +11,25 @@
 </head>
 <body>
     <h1>Whack-a-Mole!</h1>
-    <h2>Score: <span class="score">0</span></h2>
-    <button id="start" onClick="startGame()">Start</button>
+    <div class="game-info">
+        <div class="info-item">
+            <span class="label">Stage:</span>
+            <span class="stage">1</span>
+        </div>
+        <div class="info-item">
+            <span class="label">Score:</span>
+            <span class="score">0</span>
+        </div>
+        <div class="info-item">
+            <span class="label">Target:</span>
+            <span class="target">5</span>
+        </div>
+        <div class="info-item">
+            <span class="label">Time:</span>
+            <span class="timer">30</span>s
+        </div>
+    </div>
+    <button id="start" onClick="startGame()">Start Game</button>
     <div class="game">
         <div class="hole hole1">
             <div class="mole"></div>
@@ -36,6 +53,17 @@
     <div class="controls">
         <button id="backBtn" class="btn">← Back to Games</button>
     </div>
+    
+    <!-- Game Over Modal -->
+    <div id="gameOverModal" class="modal">
+        <div class="modal-content">
+            <h2 id="modalTitle">Game Over!</h2>
+            <p id="modalMessage"></p>
+            <button onclick="restartGame()">Play Again</button>
+            <button onclick="window.location.href='/'">Back to Games</button>
+        </div>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
