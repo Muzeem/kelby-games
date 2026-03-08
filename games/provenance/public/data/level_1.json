@@ -1,0 +1,80 @@
+{
+  "levelId": "estate_foyer_01",
+  "name": "The Dusty Foyer",
+  "timeLimitSeconds": 1500,
+  "backgroundUrl": "assets/backgrounds/foyer.png",
+  "objects": [
+    {
+      "id": "obj_vase_01",
+      "name": "Ming Dynasty Vase",
+      "imageUrl": "assets/objects/vase.png",
+      "baseValue": 5000,
+      "hitbox": { "x": 120, "y": 450, "width": 60, "height": 100 },
+      "trivia": [
+        { "statement": "It was crafted during the Chenghua Emperor's reign.", "isTrue": true },
+        { "statement": "The blue pigment was imported from Persia.", "isTrue": true },
+        { "statement": "It is completely microwave safe.", "isTrue": false }
+      ]
+    },
+    {
+      "id": "obj_clock_02",
+      "name": "Ormolu Mantel Clock",
+      "imageUrl": "assets/objects/clock.png",
+      "baseValue": 1200,
+      "hitbox": { "x": 800, "y": 300, "width": 80, "height": 80 },
+      "trivia": [
+        { "statement": "The gold finish is applied using mercury.", "isTrue": true },
+        { "statement": "It runs on a standard AA battery.", "isTrue": false },
+        { "statement": "It was manufactured in 18th Century France.", "isTrue": true }
+      ]
+    },
+    {
+      "id": "obj_painting_03",
+      "name": "Unsigned Oil Landscape",
+      "imageUrl": "assets/objects/painting.png",
+      "baseValue": 300,
+      "hitbox": { "x": 400, "y": 150, "width": 200, "height": 150 },
+      "trivia": [
+        { "statement": "It depicts the Scottish Highlands.", "isTrue": false },
+        { "statement": "The canvas is made of woven linen.", "isTrue": true },
+        { "statement": "The frame is carved mahogany.", "isTrue": true }
+      ]
+    },
+    {
+      "id": "obj_bronze_urn_04",
+      "name": "Persian Bronze Urn",
+      "imageUrl": "assets/objects/bronze-urn.png",
+      "baseValue": 3800,
+      "hitbox": { "x": 620, "y": 420, "width": 90, "height": 120 },
+      "trivia": [
+        { "statement": "The urn's engraved motifs are characteristic of Safavid-era metalwork from 17th century Isfahan.", "isTrue": true },
+        { "statement": "Bronze vessels of this type were used in royal hammams for storing rosewater.", "isTrue": true },
+        { "statement": "The patina was artificially applied in a 1920s London workshop to increase its apparent age.", "isTrue": false }
+      ]
+    },
+    {
+      "id": "obj_ivan_painting_05",
+      "name": "Ivan the Terrible and His Son",
+      "imageUrl": "assets/objects/ivan-painting.png",
+      "baseValue": 8500,
+      "hitbox": { "x": 250, "y": 320, "width": 140, "height": 100 },
+      "trivia": [
+        { "statement": "Painted by Ilya Repin in 1885, it depicts the moment Tsar Ivan IV mortally wounds his own son.", "isTrue": true },
+        { "statement": "The painting was slashed by a vandal in 1913 and again in 2018 at the Tretyakov Gallery in Moscow.", "isTrue": true },
+        { "statement": "Repin based the composition on a photograph he secretly took inside the Kremlin archives.", "isTrue": false }
+      ]
+    },
+    {
+      "id": "obj_egyptian_vase_06",
+      "name": "Egyptian Faience Vessel",
+      "imageUrl": "assets/objects/egyptian-vase.png",
+      "baseValue": 6200,
+      "hitbox": { "x": 880, "y": 100, "width": 70, "height": 110 },
+      "trivia": [
+        { "statement": "The blue-green glaze is produced from crushed quartz and copper oxide, a technique dating to 3500 BCE.", "isTrue": true },
+        { "statement": "The accompanying ushabti figurine was placed in tombs to serve the deceased in the afterlife.", "isTrue": true },
+        { "statement": "This vessel was recovered from the tomb of Cleopatra VII during a 1902 British excavation.", "isTrue": false }
+      ]
+    }
+  ]
+}

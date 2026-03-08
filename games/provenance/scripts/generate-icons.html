@@ -1,0 +1,21 @@
+<!-- Open this in a browser to generate placeholder icons. Replace with real art later. -->
+<canvas id="c"></canvas>
+<script>
+const sizes = [44, 50, 150, 192, 512];
+const c = document.getElementById('c');
+const ctx = c.getContext('2d');
+sizes.forEach(s => {
+  c.width = s; c.height = s;
+  ctx.fillStyle = '#1a1a2e';
+  ctx.fillRect(0, 0, s, s);
+  ctx.fillStyle = '#c9a227';
+  ctx.font = `bold ${Math.floor(s * 0.5)}px serif`;
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText('P', s/2, s/2);
+  const link = document.createElement('a');
+  link.download = `icon-${s}.png`;
+  link.href = c.toDataURL('image/png');
+  link.click();
+});
+</script>

@@ -1,0 +1,151 @@
+{
+  "rooms": [
+    {
+      "id": "room-1",
+      "name": "The Victorian Study",
+      "backgroundAssetPath": "assets/rooms/room-1.jpg",
+      "objects": [
+        {
+          "id": "obj-1-1",
+          "name": "Antique Pocket Watch",
+          "imageUrl": "assets/objects/pocket-watch.png",
+          "x": 200, "y": 150, "width": 60, "height": 60,
+          "baseAppraisalValue": 1200,
+          "trivia": {
+            "claims": [
+              { "text": "Pocket watches became popular in the 16th century.", "isFalse": false },
+              { "text": "The first pocket watch was made in Nuremberg around 1510.", "isFalse": false },
+              { "text": "Pocket watches were originally powered by solar energy.", "isFalse": true }
+            ]
+          }
+        },
+        {
+          "id": "obj-1-2",
+          "name": "Oil Painting",
+          "imageUrl": "assets/objects/oil-painting.png",
+          "x": 500, "y": 100, "width": 120, "height": 90,
+          "baseAppraisalValue": 3500,
+          "trivia": {
+            "claims": [
+              { "text": "Oil painting dates back to at least the 7th century.", "isFalse": false },
+              { "text": "Jan van Eyck is often credited with perfecting oil painting.", "isFalse": false },
+              { "text": "Oil paints were originally made from crushed diamonds.", "isFalse": true }
+            ]
+          }
+        },
+        {
+          "id": "obj-1-3",
+          "name": "Brass Telescope",
+          "imageUrl": "assets/objects/telescope.png",
+          "x": 750, "y": 300, "width": 80, "height": 40,
+          "baseAppraisalValue": 2800,
+          "trivia": {
+            "claims": [
+              { "text": "The telescope was patented by Hans Lippershey in 1608.", "isFalse": false },
+              { "text": "Galileo improved the telescope for astronomical observation.", "isFalse": false },
+              { "text": "The first telescopes could magnify objects up to 1000x.", "isFalse": true }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "room-2",
+      "name": "The Collector's Attic",
+      "backgroundAssetPath": "assets/rooms/room-2.jpg",
+      "objects": [
+        {
+          "id": "obj-2-1",
+          "name": "Porcelain Vase",
+          "imageUrl": "assets/objects/vase.png",
+          "x": 300, "y": 200, "width": 50, "height": 80,
+          "baseAppraisalValue": 4200,
+          "trivia": {
+            "claims": [
+              { "text": "Chinese porcelain dates back to the Eastern Han dynasty.", "isFalse": false },
+              { "text": "Porcelain is made from kaolin clay fired at high temperatures.", "isFalse": false },
+              { "text": "Porcelain was first invented in ancient Egypt.", "isFalse": true }
+            ]
+          }
+        },
+        {
+          "id": "obj-2-2",
+          "name": "Vintage Globe",
+          "imageUrl": "assets/objects/globe.png",
+          "x": 600, "y": 250, "width": 70, "height": 70,
+          "baseAppraisalValue": 1800,
+          "trivia": {
+            "claims": [
+              { "text": "The oldest surviving terrestrial globe was made in 1492.", "isFalse": false },
+              { "text": "Martin Behaim created the Erdapfel globe.", "isFalse": false },
+              { "text": "Ancient Romans mass-produced globes for schools.", "isFalse": true }
+            ]
+          }
+        },
+        {
+          "id": "obj-2-3",
+          "name": "Silver Candelabra",
+          "imageUrl": "assets/objects/candelabra.png",
+          "x": 150, "y": 350, "width": 60, "height": 90,
+          "baseAppraisalValue": 2200,
+          "trivia": {
+            "claims": [
+              { "text": "Candelabras have been used since ancient Roman times.", "isFalse": false },
+              { "text": "Silver candelabras became status symbols in the 18th century.", "isFalse": false },
+              { "text": "Candelabras were originally designed to hold electric bulbs.", "isFalse": true }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "room-3",
+      "name": "The Grand Library",
+      "backgroundAssetPath": "assets/rooms/room-3.jpg",
+      "objects": [
+        {
+          "id": "obj-3-1",
+          "name": "First Edition Book",
+          "imageUrl": "assets/objects/book.png",
+          "x": 400, "y": 180, "width": 50, "height": 70,
+          "baseAppraisalValue": 5000,
+          "trivia": {
+            "claims": [
+              { "text": "The Gutenberg Bible was printed around 1455.", "isFalse": false },
+              { "text": "First editions are valued for their historical significance.", "isFalse": false },
+              { "text": "The first printed book was a cookbook from 1320.", "isFalse": true }
+            ]
+          }
+        },
+        {
+          "id": "obj-3-2",
+          "name": "Ornate Letter Opener",
+          "imageUrl": "assets/objects/letter-opener.png",
+          "x": 650, "y": 320, "width": 70, "height": 30,
+          "baseAppraisalValue": 900,
+          "trivia": {
+            "claims": [
+              { "text": "Letter openers became common in the 19th century.", "isFalse": false },
+              { "text": "They were often made from ivory, bone, or precious metals.", "isFalse": false },
+              { "text": "Letter openers were invented by Benjamin Franklin.", "isFalse": true }
+            ]
+          }
+        },
+        {
+          "id": "obj-3-3",
+          "name": "Antique Compass",
+          "imageUrl": "assets/objects/compass.png",
+          "x": 250, "y": 400, "width": 55, "height": 55,
+          "baseAppraisalValue": 3100,
+          "trivia": {
+            "claims": [
+              { "text": "The magnetic compass was invented in China during the Han dynasty.", "isFalse": false },
+              { "text": "Compasses were first used for navigation in the 11th century.", "isFalse": false },
+              { "text": "Compasses work by detecting the Earth's gravitational pull.", "isFalse": true }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
